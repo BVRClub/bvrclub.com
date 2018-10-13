@@ -12,29 +12,11 @@
     <ul></ul>
     <h2>connect</h2>
     <ul>
-      <li>
+      <li v-for="link in links" :key="link">
         <a
-          href="mailto:info@bvrclub.com"
+          :href="link.link"
           target="_blank"
-        >
-        info@bvrclub.com
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/bvrclub"
-          target="_blank"
-        >
-        Tweet us
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://instagram.com/bvrclub"
-          target="_blank"
-        >
-        Instagram
-        </a>
+          >{{ link.name }}</a>
       </li>
     </ul>
   </div>
@@ -42,12 +24,19 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'BVR',
   data () {
     return {
       msg: 'BVR Club',
       subtitle: 'Ballard Virtual Reality',
-      about: 'The BVR Club will explore current and emerging virtual reality and related technologies (VR/MR/AR).  Club members will experience high fidelity and mobile VR and have opportunities to develop their own VR applications.  Other club activities will include attending VR-related events and hosting guest speakers and demonstrations from the VR community. '
+      links: [
+        {'name': 'Instagram', 'link': 'https://instagram.com/bvrclub'},
+        {'name': 'Twitter', 'link': 'https://twitter.com/bvrclub'},
+        {'name': 'E-Mail', 'link': 'mailto:info@bvrclub.com'},
+        {'name': 'Github', 'link': 'https://github.com/BVRClub'},
+        {'name': 'Twitch', 'link': 'https://twitch.tv/BVRClub'}
+      ],
+      about: 'The BVR Club is the immersive technology club at Ballard High School.  Club members will experience high fidelity, standalone, and mobile VR and have opportunities to develop their own xR applications.  Other club activities will include attending xR-related events and hosting guest speakers and demonstrations from the xR community. '
     }
   }
 }
